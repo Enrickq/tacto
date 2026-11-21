@@ -5,7 +5,7 @@
 In class, a diagram can reach a blind student as a single sentence: “diagram of a cell”. **TACTO** lets blind and low-vision students explore the diagram itself, with one finger, on the phone they already own. Every region answers with its own tone, a spoken name and a vibration.
 
 - **Live demo:** <https://enrickq.github.io/tacto/> (headphones recommended; the ES · EN switch at the top changes the language)
-- **90-second video:** <https://youtu.be/Cdt1AGSOTkM>
+- **90-second video:** <https://youtu.be/GUzY94L6Lxc>
 - **ERUA iDeaThon 2026:** challenge 3.2, *Disability inclusion and accessibility*
 
 ## What it does
