@@ -42,6 +42,9 @@ export class FeedbackEngine {
     this._clipSource = null;
     this._clipGain = null;
     this._clipCache = new Map();
+    // Set when the site answers 404 for a recording (a copy published without
+    // them): later phrases go straight to the device voice instead of asking again.
+    this._recordingsMissing = false;
     // Mission speech (questions, answers, directions) is not cut by moving the finger.
     this._priority = false;
     this._beacon = null;
@@ -363,7 +366,7 @@ export class FeedbackEngine {
 
   _scheduleSpeech(text, id) {
     if (!text || this.options.volume === 0) return;
-    if (!this._speechAvailable() && !getNarrationUrl(text, getLanguage())) { this._setSpeechStatus('unavailable', t('speech.noVoiceForText')); return; }
+    if (!this._speechAvailable() && (this._recordingsMissing || !getNarrationUrl(text, getLanguage()))) { this._setSpeechStatus('unavailable', t('speech.noVoiceForText')); return; }
     if (id === this._lastSpokenId && now() - this._lastSpeechAt < 1800) return;
     clearTimeout(this._voiceTimer);
     const delay = Math.max(240, 950 - (now() - this._lastSpeechAt));
@@ -407,7 +410,7 @@ export class FeedbackEngine {
     this._priority = Boolean(priority);
     const sequence = this._speechSequence;
     const language = getLanguage();
-    const clipUrl = !skipRecording && getNarrationUrl(text, language);
+    const clipUrl = !skipRecording && !this._recordingsMissing && getNarrationUrl(text, language);
     if (clipUrl && this._context?.state === 'running' && typeof this._context.decodeAudioData === 'function' && typeof this._context.createBufferSource === 'function') {
       this._setSpeechStatus('loading', t('speech.loadingClip'));
       this._playRecorded(clipUrl, text, id, sequence, { priority, then });
@@ -480,6 +483,7 @@ export class FeedbackEngine {
         const promise = Promise.race([request, new Promise((_, reject) => {
           timeout = setTimeout(() => { abort?.abort(); reject(new Error('Narration timed out')); }, 8000);
         })]).then(response => {
+          if (response.status === 404) this._recordingsMissing = true;
           if (!response.ok) throw new Error('Narration unavailable');
           return response.arrayBuffer();
         }).then(bytes => this._context.decodeAudioData(bytes)).finally(() => clearTimeout(timeout));

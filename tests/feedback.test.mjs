@@ -133,6 +133,11 @@ function harness(t, configuration = {}) {
       contexts.push(this);
       if (state.noPanner) this.createStereoPanner = undefined;
       if (state.noCompressor) this.createDynamicsCompressor = undefined;
+      // Recorded narration needs decoding; without `clips` the engine uses the browser voice.
+      if (state.clips) {
+        this.decodeAudioData = async () => ({ duration: 1 });
+        this.createBufferSource = () => this.node('buffer');
+      }
     }
 
     node(kind) {
@@ -191,6 +196,14 @@ function harness(t, configuration = {}) {
   replace('SpeechSynthesisUtterance', state.noSpeech ? undefined : class {
     constructor(text) { this.text = text; }
   });
+  const requests = [];
+  if (state.clips) {
+    replace('fetch', async (url) => {
+      requests.push(String(url));
+      if (state.offline) throw new TypeError('Failed to fetch');
+      return { ok: false, status: 404 };
+    });
+  }
 
   t.after(() => {
     for (const engine of engines) engine.destroy();
@@ -202,7 +215,7 @@ function harness(t, configuration = {}) {
   });
 
   return {
-    state, clock, document, window, activation, contexts, vibrations, speech,
+    state, clock, document, window, activation, contexts, vibrations, speech, requests,
     create() { const engine = new FeedbackEngine(); engines.push(engine); return engine; },
     gesture() { activation.isActive = true; activation.hasBeenActive = true; },
   };
@@ -512,6 +525,40 @@ test('mission speech plays its phrases in order and is not cut by moving across 
   const before = h.speech.cancellations;
   engine.stop();
   assert.equal(h.speech.cancellations, before + 1, 'pausing still silences mission speech');
+});
+
+test('a copy published without recordings falls back to the device voice and stops asking for them', async (t) => {
+  setLanguage('en');
+  t.after(() => setLanguage('es'));
+  const settle = () => new Promise((resolve) => setImmediate(resolve));
+  const h = harness(t, { clips: true });
+  const engine = h.create(); h.gesture(); await engine.enable();
+  assert.equal(engine.announce('You found 2 of 3'), true);
+  await settle();
+  assert.equal(h.requests.length, 1, 'the recording is requested once');
+  assert.deepEqual(h.speech.calls.map((utterance) => utterance.text), ['You found 2 of 3'], 'the device voice says it instead');
+  h.speech.finish();
+  assert.equal(engine.announce('You found 3 of 3'), true);
+  await settle();
+  assert.equal(h.requests.length, 1, 'after a 404, later phrases do not ask the server again');
+  assert.deepEqual(h.speech.calls.map((utterance) => utterance.text), ['You found 2 of 3', 'You found 3 of 3']);
+  engine.stop();
+});
+
+test('a network failure is not taken as missing recordings: each phrase tries its recording again', async (t) => {
+  setLanguage('en');
+  t.after(() => setLanguage('es'));
+  const settle = () => new Promise((resolve) => setImmediate(resolve));
+  const h = harness(t, { clips: true, offline: true });
+  const engine = h.create(); h.gesture(); await engine.enable();
+  engine.announce('You found 2 of 3');
+  await settle();
+  h.speech.finish();
+  engine.announce('You found 3 of 3');
+  await settle();
+  assert.equal(h.requests.length, 2);
+  assert.deepEqual(h.speech.calls.map((utterance) => utterance.text), ['You found 2 of 3', 'You found 3 of 3'], 'each phrase is still spoken');
+  engine.stop();
 });
 
 test('the guiding sound blips faster near the answer, pans to its side and ends with the finger', async (t) => {

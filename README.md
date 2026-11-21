@@ -28,7 +28,7 @@ You need Node.js 20 or newer. There are no packages to install.
 
 ```bash
 npm run dev     # http://localhost:4317
-npm test        # 100 automated tests
+npm test        # 102 automated tests
 npm run check   # syntax and resources
 ```
 
