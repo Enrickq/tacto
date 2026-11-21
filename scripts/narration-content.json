@@ -1,0 +1,1112 @@
+{
+  "schema": "tacto.narration.v2",
+  "provenance": {
+    "source": "dist/scenes.js and dist/i18n.js",
+    "engine": "Windows System.Speech.Synthesis.SpeechSynthesizer",
+    "voices": {
+      "es": {
+        "culture": "es-ES",
+        "voicePreference": [
+          "Microsoft Helena Desktop",
+          "Microsoft Laura",
+          "Microsoft Helena"
+        ]
+      },
+      "en": {
+        "culture": "en-US",
+        "voicePreference": [
+          "Microsoft Zira Desktop",
+          "Microsoft David Desktop"
+        ]
+      }
+    },
+    "format": "WAV PCM 16-bit mono 22050 Hz",
+    "rate": 0,
+    "volume": 90,
+    "generation": "Local; no external TTS service or downloaded audio.",
+    "regenerate": [
+      "node scripts/prepare-narration.mjs",
+      "powershell.exe -NoProfile -File scripts/generate-narration.ps1 [-Languages es,en]"
+    ]
+  },
+  "assets": [
+    {
+      "id": "voice-test",
+      "lang": "es",
+      "file": "voice-test.wav",
+      "text": "La voz está activada. Al cambiar de zona, diré su nombre.",
+      "spoken": "La voz está activada. Al cambiar de zona, diré su nombre."
+    },
+    {
+      "id": "cell-intro",
+      "lang": "es",
+      "file": "cell-intro.wav",
+      "text": "Explora una célula animal simplificada. Cada orgánulo tiene una voz, un timbre y un patrón distintos. El latido del núcleo es un código didáctico, no un pulso biológico.",
+      "spoken": "Explora una célula animal simplificada. Cada orgánulo tiene una voz, un timbre y un patrón distintos. El latido del núcleo es un código didáctico, no un pulso biológico."
+    },
+    {
+      "id": "cell-membrane-label",
+      "lang": "es",
+      "file": "cell-membrane-label.wav",
+      "text": "Membrana celular",
+      "spoken": "Membrana celular"
+    },
+    {
+      "id": "cell-membrane-detail",
+      "lang": "es",
+      "file": "cell-membrane-detail.wav",
+      "text": "Membrana celular. Delimita la célula y regula el intercambio de sustancias con el exterior.",
+      "spoken": "Membrana celular. Delimita la célula y regula el intercambio de sustancias con el exterior."
+    },
+    {
+      "id": "cell-cytoplasm-label",
+      "lang": "es",
+      "file": "cell-cytoplasm-label.wav",
+      "text": "Citoplasma",
+      "spoken": "Citoplasma"
+    },
+    {
+      "id": "cell-cytoplasm-detail",
+      "lang": "es",
+      "file": "cell-cytoplasm-detail.wav",
+      "text": "Citoplasma. Medio interior donde se encuentran los orgánulos y ocurren muchas reacciones celulares.",
+      "spoken": "Citoplasma. Medio interior donde se encuentran los orgánulos y ocurren muchas reacciones celulares."
+    },
+    {
+      "id": "cell-nucleus-label",
+      "lang": "es",
+      "file": "cell-nucleus-label.wav",
+      "text": "Núcleo",
+      "spoken": "Núcleo"
+    },
+    {
+      "id": "cell-nucleus-detail",
+      "lang": "es",
+      "file": "cell-nucleus-detail.wav",
+      "text": "Núcleo. Contiene la mayor parte del ADN y participa en la regulación de la actividad celular.",
+      "spoken": "Núcleo. Contiene la mayor parte del ADN y participa en la regulación de la actividad celular."
+    },
+    {
+      "id": "cell-nucleolus-label",
+      "lang": "es",
+      "file": "cell-nucleolus-label.wav",
+      "text": "Nucléolo",
+      "spoken": "Nucléolo"
+    },
+    {
+      "id": "cell-nucleolus-detail",
+      "lang": "es",
+      "file": "cell-nucleolus-detail.wav",
+      "text": "Nucléolo. Región del núcleo donde se produce ARN ribosómico y se ensamblan subunidades de los ribosomas.",
+      "spoken": "Nucléolo. Región del núcleo donde se produce ARN ribosómico y se ensamblan subunidades de los ribosomas."
+    },
+    {
+      "id": "cell-mitochondria-label",
+      "lang": "es",
+      "file": "cell-mitochondria-label.wav",
+      "text": "Mitocondrias",
+      "spoken": "Mitocondrias"
+    },
+    {
+      "id": "cell-mitochondria-detail",
+      "lang": "es",
+      "file": "cell-mitochondria-detail.wav",
+      "text": "Mitocondrias. Transforman la energía de los nutrientes y producen gran parte del ATP de la célula.",
+      "spoken": "Mitocondrias. Transforman la energía de los nutrientes y producen gran parte del ATP de la célula."
+    },
+    {
+      "id": "cell-reticulum-label",
+      "lang": "es",
+      "file": "cell-reticulum-label.wav",
+      "text": "Retículo endoplasmático",
+      "spoken": "Retículo endoplasmático"
+    },
+    {
+      "id": "cell-reticulum-detail",
+      "lang": "es",
+      "file": "cell-reticulum-detail.wav",
+      "text": "Retículo endoplasmático. Red de membranas que participa en la fabricación y el transporte de proteínas y lípidos.",
+      "spoken": "Retículo endoplasmático. Red de membranas que participa en la fabricación y el transporte de proteínas y lípidos."
+    },
+    {
+      "id": "cell-golgi-label",
+      "lang": "es",
+      "file": "cell-golgi-label.wav",
+      "text": "Aparato de Golgi",
+      "spoken": "Aparato de Golgi"
+    },
+    {
+      "id": "cell-golgi-detail",
+      "lang": "es",
+      "file": "cell-golgi-detail.wav",
+      "text": "Aparato de Golgi. Modifica, clasifica y empaqueta proteínas y lípidos para transportarlos.",
+      "spoken": "Aparato de Golgi. Modifica, clasifica y empaqueta proteínas y lípidos para transportarlos."
+    },
+    {
+      "id": "cell-ribosomes-label",
+      "lang": "es",
+      "file": "cell-ribosomes-label.wav",
+      "text": "Ribosomas",
+      "spoken": "Ribosomas"
+    },
+    {
+      "id": "cell-ribosomes-detail",
+      "lang": "es",
+      "file": "cell-ribosomes-detail.wav",
+      "text": "Ribosomas. Pequeñas estructuras que sintetizan proteínas. También existen ribosomas asociados al retículo.",
+      "spoken": "Ribosomas. Pequeñas estructuras que sintetizan proteínas. También existen ribosomas asociados al retículo."
+    },
+    {
+      "id": "islands-intro",
+      "lang": "es",
+      "file": "islands-intro.wav",
+      "text": "Explora las ocho islas de Canarias en un esquema didáctico. Cada isla tiene su propio tono. Busca en Tenerife el Teide, señalado con un triángulo y un sonido más agudo. No es un mapa de navegación.",
+      "spoken": "Explora las ocho islas de Canarias en un esquema didáctico. Cada isla tiene su propio tono. Busca en Tenerife el Teide, señalado con un triángulo y un sonido más agudo. No es un mapa de navegación."
+    },
+    {
+      "id": "islands-palma-label",
+      "lang": "es",
+      "file": "islands-palma-label.wav",
+      "text": "La Palma",
+      "spoken": "La Palma"
+    },
+    {
+      "id": "islands-palma-detail",
+      "lang": "es",
+      "file": "islands-palma-detail.wav",
+      "text": "La Palma. Isla del sector occidental del archipiélago. En este esquema está al norte de El Hierro.",
+      "spoken": "La Palma. Isla del sector occidental del archipiélago. En este esquema está al norte de El Hierro."
+    },
+    {
+      "id": "islands-hierro-label",
+      "lang": "es",
+      "file": "islands-hierro-label.wav",
+      "text": "El Hierro",
+      "spoken": "El Hierro"
+    },
+    {
+      "id": "islands-hierro-detail",
+      "lang": "es",
+      "file": "islands-hierro-detail.wav",
+      "text": "El Hierro. La isla situada más al suroeste en este esquema de Canarias.",
+      "spoken": "El Hierro. La isla situada más al suroeste en este esquema de Canarias."
+    },
+    {
+      "id": "islands-gomera-label",
+      "lang": "es",
+      "file": "islands-gomera-label.wav",
+      "text": "La Gomera",
+      "spoken": "La Gomera"
+    },
+    {
+      "id": "islands-gomera-detail",
+      "lang": "es",
+      "file": "islands-gomera-detail.wav",
+      "text": "La Gomera. Isla de forma aproximadamente circular, al oeste de Tenerife.",
+      "spoken": "La Gomera. Isla de forma aproximadamente circular, al oeste de Tenerife."
+    },
+    {
+      "id": "islands-tenerife-label",
+      "lang": "es",
+      "file": "islands-tenerife-label.wav",
+      "text": "Tenerife",
+      "spoken": "Tenerife"
+    },
+    {
+      "id": "islands-tenerife-detail",
+      "lang": "es",
+      "file": "islands-tenerife-detail.wav",
+      "text": "Tenerife. Isla central-occidental donde se encuentra el Teide. Busca el pequeño triángulo luminoso en su interior.",
+      "spoken": "Tenerife. Isla central-occidental donde se encuentra el Teide. Busca el pequeño triángulo luminoso en su interior."
+    },
+    {
+      "id": "islands-grancanaria-label",
+      "lang": "es",
+      "file": "islands-grancanaria-label.wav",
+      "text": "Gran Canaria",
+      "spoken": "Gran Canaria"
+    },
+    {
+      "id": "islands-grancanaria-detail",
+      "lang": "es",
+      "file": "islands-grancanaria-detail.wav",
+      "text": "Gran Canaria. Isla de contorno aproximadamente circular, al este de Tenerife y al oeste de Fuerteventura.",
+      "spoken": "Gran Canaria. Isla de contorno aproximadamente circular, al este de Tenerife y al oeste de Fuerteventura."
+    },
+    {
+      "id": "islands-fuerteventura-label",
+      "lang": "es",
+      "file": "islands-fuerteventura-label.wav",
+      "text": "Fuerteventura",
+      "spoken": "Fuerteventura"
+    },
+    {
+      "id": "islands-fuerteventura-detail",
+      "lang": "es",
+      "file": "islands-fuerteventura-detail.wav",
+      "text": "Fuerteventura. Isla alargada del sector oriental, al sur de Lanzarote.",
+      "spoken": "Fuerteventura. Isla alargada del sector oriental, al sur de Lanzarote."
+    },
+    {
+      "id": "islands-lanzarote-label",
+      "lang": "es",
+      "file": "islands-lanzarote-label.wav",
+      "text": "Lanzarote",
+      "spoken": "Lanzarote"
+    },
+    {
+      "id": "islands-lanzarote-detail",
+      "lang": "es",
+      "file": "islands-lanzarote-detail.wav",
+      "text": "Lanzarote. Isla del sector nororiental de Canarias, al norte de Fuerteventura y al sur de La Graciosa.",
+      "spoken": "Lanzarote. Isla del sector nororiental de Canarias, al norte de Fuerteventura y al sur de La Graciosa."
+    },
+    {
+      "id": "islands-graciosa-label",
+      "lang": "es",
+      "file": "islands-graciosa-label.wav",
+      "text": "La Graciosa",
+      "spoken": "La Graciosa"
+    },
+    {
+      "id": "islands-graciosa-detail",
+      "lang": "es",
+      "file": "islands-graciosa-detail.wav",
+      "text": "La Graciosa. La más pequeña de las ocho islas representadas. Está al norte de Lanzarote.",
+      "spoken": "La Graciosa. La más pequeña de las ocho islas representadas. Está al norte de Lanzarote."
+    },
+    {
+      "id": "islands-teide-label",
+      "lang": "es",
+      "file": "islands-teide-label.wav",
+      "text": "Teide",
+      "spoken": "Teide"
+    },
+    {
+      "id": "islands-teide-detail",
+      "lang": "es",
+      "file": "islands-teide-detail.wav",
+      "text": "Teide. Volcán de Tenerife y punto más alto de España. Aquí tiene el tono más agudo para distinguir el hito de la isla.",
+      "spoken": "Teide. Volcán de Tenerife y punto más alto de España. Aquí tiene el tono más agudo para distinguir el hito de la isla."
+    },
+    {
+      "id": "economy-intro",
+      "lang": "es",
+      "file": "economy-intro.wav",
+      "text": "Recorre dos curvas de oferta y demanda. La altura eleva el tono; el timbre distingue cada curva. En el cruce coinciden la cantidad ofrecida y la demandada, a un mismo precio. Es un modelo lineal simplificado.",
+      "spoken": "Recorre dos curvas de oferta y demanda. La altura eleva el tono; el timbre distingue cada curva. En el cruce coinciden la cantidad ofrecida y la demandada, a un mismo precio. Es un modelo lineal simplificado."
+    },
+    {
+      "id": "economy-supply-label",
+      "lang": "es",
+      "file": "economy-supply-label.wav",
+      "text": "Oferta",
+      "spoken": "Oferta"
+    },
+    {
+      "id": "economy-supply-detail",
+      "lang": "es",
+      "file": "economy-supply-detail.wav",
+      "text": "Oferta. La curva ascendente relaciona un precio mayor con una cantidad ofrecida mayor. Suena con un timbre triangular.",
+      "spoken": "Oferta. La curva ascendente relaciona un precio mayor con una cantidad ofrecida mayor. Suena con un timbre triangular."
+    },
+    {
+      "id": "economy-demand-label",
+      "lang": "es",
+      "file": "economy-demand-label.wav",
+      "text": "Demanda",
+      "spoken": "Demanda"
+    },
+    {
+      "id": "economy-demand-detail",
+      "lang": "es",
+      "file": "economy-demand-detail.wav",
+      "text": "Demanda. La curva descendente relaciona un precio mayor con una cantidad demandada menor. Suena con un timbre suave.",
+      "spoken": "Demanda. La curva descendente relaciona un precio mayor con una cantidad demandada menor. Suena con un timbre suave."
+    },
+    {
+      "id": "economy-equilibrium-label",
+      "lang": "es",
+      "file": "economy-equilibrium-label.wav",
+      "text": "Punto de equilibrio",
+      "spoken": "Punto de equilibrio"
+    },
+    {
+      "id": "economy-equilibrium-detail",
+      "lang": "es",
+      "file": "economy-equilibrium-detail.wav",
+      "text": "Punto de equilibrio. Las curvas se cruzan: a este precio la cantidad ofrecida coincide con la cantidad demandada. Las guías indican P estrella y Q estrella.",
+      "spoken": "Punto de equilibrio. Las curvas se cruzan: a este precio la cantidad ofrecida coincide con la cantidad demandada. Las guías indican P estrella y Q estrella."
+    },
+    {
+      "id": "economy-price-label",
+      "lang": "es",
+      "file": "economy-price-label.wav",
+      "text": "Eje del precio",
+      "spoken": "Eje del precio"
+    },
+    {
+      "id": "economy-price-detail",
+      "lang": "es",
+      "file": "economy-price-detail.wav",
+      "text": "Eje del precio. Eje vertical. El precio aumenta al subir. P estrella marca el precio de equilibrio.",
+      "spoken": "Eje del precio. Eje vertical. El precio aumenta al subir. P estrella marca el precio de equilibrio."
+    },
+    {
+      "id": "economy-quantity-label",
+      "lang": "es",
+      "file": "economy-quantity-label.wav",
+      "text": "Eje de la cantidad",
+      "spoken": "Eje de la cantidad"
+    },
+    {
+      "id": "economy-quantity-detail",
+      "lang": "es",
+      "file": "economy-quantity-detail.wav",
+      "text": "Eje de la cantidad. Eje horizontal. La cantidad aumenta hacia la derecha. Q estrella marca la cantidad de equilibrio.",
+      "spoken": "Eje de la cantidad. Eje horizontal. La cantidad aumenta hacia la derecha. Q estrella marca la cantidad de equilibrio."
+    },
+    {
+      "id": "cell-mission-nucleus",
+      "lang": "es",
+      "file": "cell-mission-nucleus.wav",
+      "text": "Encuentra el núcleo.",
+      "spoken": "Encuentra el núcleo."
+    },
+    {
+      "id": "cell-mission-mitochondria",
+      "lang": "es",
+      "file": "cell-mission-mitochondria.wav",
+      "text": "Encuentra un orgánulo que produce gran parte del ATP de la célula.",
+      "spoken": "Encuentra un orgánulo que produce gran parte del ATP de la célula."
+    },
+    {
+      "id": "cell-mission-nucleolus",
+      "lang": "es",
+      "file": "cell-mission-nucleolus.wav",
+      "text": "Encuentra la pequeña región que hay dentro del núcleo.",
+      "spoken": "Encuentra la pequeña región que hay dentro del núcleo."
+    },
+    {
+      "id": "islands-mission-tenerife",
+      "lang": "es",
+      "file": "islands-mission-tenerife.wav",
+      "text": "Encuentra Tenerife.",
+      "spoken": "Encuentra Tenerife."
+    },
+    {
+      "id": "islands-mission-teide",
+      "lang": "es",
+      "file": "islands-mission-teide.wav",
+      "text": "Ahora encuentra el Teide, dentro de Tenerife.",
+      "spoken": "Ahora encuentra el Teide, dentro de Tenerife."
+    },
+    {
+      "id": "islands-mission-hierro",
+      "lang": "es",
+      "file": "islands-mission-hierro.wav",
+      "text": "Encuentra la isla situada más al suroeste.",
+      "spoken": "Encuentra la isla situada más al suroeste."
+    },
+    {
+      "id": "economy-mission-demand",
+      "lang": "es",
+      "file": "economy-mission-demand.wav",
+      "text": "Encuentra la curva de demanda.",
+      "spoken": "Encuentra la curva de demanda."
+    },
+    {
+      "id": "economy-mission-supply",
+      "lang": "es",
+      "file": "economy-mission-supply.wav",
+      "text": "Encuentra la curva en la que el precio sube cuando aumenta la cantidad.",
+      "spoken": "Encuentra la curva en la que el precio sube cuando aumenta la cantidad."
+    },
+    {
+      "id": "economy-mission-equilibrium",
+      "lang": "es",
+      "file": "economy-mission-equilibrium.wav",
+      "text": "Encuentra el punto donde se cruzan la oferta y la demanda.",
+      "spoken": "Encuentra el punto donde se cruzan la oferta y la demanda."
+    },
+    {
+      "id": "mission-intro",
+      "lang": "es",
+      "file": "mission-intro.wav",
+      "text": "Tres retos. Explora con el dedo y toca dos veces donde creas que está la respuesta. Si lo necesitas, pide una pista.",
+      "spoken": "Tres retos. Explora con el dedo y toca dos veces donde creas que está la respuesta. Si lo necesitas, pide una pista."
+    },
+    {
+      "id": "mission-correct",
+      "lang": "es",
+      "file": "mission-correct.wav",
+      "text": "¡Correcto!",
+      "spoken": "¡Correcto!"
+    },
+    {
+      "id": "mission-wrong",
+      "lang": "es",
+      "file": "mission-wrong.wav",
+      "text": "Aquí no. Sigue explorando.",
+      "spoken": "Aquí no. Sigue explorando."
+    },
+    {
+      "id": "mission-hint1",
+      "lang": "es",
+      "file": "mission-hint1.wav",
+      "text": "Pista: sigue el sonido. Se acelera cuando te acercas.",
+      "spoken": "Pista: sigue el sonido. Se acelera cuando te acercas."
+    },
+    {
+      "id": "mission-hint2",
+      "lang": "es",
+      "file": "mission-hint2.wav",
+      "text": "Más ayuda: te diré hacia dónde moverte.",
+      "spoken": "Más ayuda: te diré hacia dónde moverte."
+    },
+    {
+      "id": "mission-on-target",
+      "lang": "es",
+      "file": "mission-on-target.wav",
+      "text": "Estás encima. Toca dos veces para responder.",
+      "spoken": "Estás encima. Toca dos veces para responder."
+    },
+    {
+      "id": "mission-done",
+      "lang": "es",
+      "file": "mission-done.wav",
+      "text": "Misiones completadas.",
+      "spoken": "Misiones completadas."
+    },
+    {
+      "id": "mission-dir-close",
+      "lang": "es",
+      "file": "mission-dir-close.wav",
+      "text": "Muy cerca.",
+      "spoken": "Muy cerca."
+    },
+    {
+      "id": "mission-dir-up",
+      "lang": "es",
+      "file": "mission-dir-up.wav",
+      "text": "Hacia arriba.",
+      "spoken": "Hacia arriba."
+    },
+    {
+      "id": "mission-dir-down",
+      "lang": "es",
+      "file": "mission-dir-down.wav",
+      "text": "Hacia abajo.",
+      "spoken": "Hacia abajo."
+    },
+    {
+      "id": "mission-dir-left",
+      "lang": "es",
+      "file": "mission-dir-left.wav",
+      "text": "A la izquierda.",
+      "spoken": "A la izquierda."
+    },
+    {
+      "id": "mission-dir-right",
+      "lang": "es",
+      "file": "mission-dir-right.wav",
+      "text": "A la derecha.",
+      "spoken": "A la derecha."
+    },
+    {
+      "id": "mission-dir-up-left",
+      "lang": "es",
+      "file": "mission-dir-up-left.wav",
+      "text": "Arriba a la izquierda.",
+      "spoken": "Arriba a la izquierda."
+    },
+    {
+      "id": "mission-dir-up-right",
+      "lang": "es",
+      "file": "mission-dir-up-right.wav",
+      "text": "Arriba a la derecha.",
+      "spoken": "Arriba a la derecha."
+    },
+    {
+      "id": "mission-dir-down-left",
+      "lang": "es",
+      "file": "mission-dir-down-left.wav",
+      "text": "Abajo a la izquierda.",
+      "spoken": "Abajo a la izquierda."
+    },
+    {
+      "id": "mission-dir-down-right",
+      "lang": "es",
+      "file": "mission-dir-down-right.wav",
+      "text": "Abajo a la derecha.",
+      "spoken": "Abajo a la derecha."
+    },
+    {
+      "id": "mission-found-0",
+      "lang": "es",
+      "file": "mission-found-0.wav",
+      "text": "Has encontrado 0 de 3.",
+      "spoken": "Has encontrado 0 de 3."
+    },
+    {
+      "id": "mission-found-1",
+      "lang": "es",
+      "file": "mission-found-1.wav",
+      "text": "Has encontrado 1 de 3.",
+      "spoken": "Has encontrado 1 de 3."
+    },
+    {
+      "id": "mission-found-2",
+      "lang": "es",
+      "file": "mission-found-2.wav",
+      "text": "Has encontrado 2 de 3.",
+      "spoken": "Has encontrado 2 de 3."
+    },
+    {
+      "id": "mission-found-3",
+      "lang": "es",
+      "file": "mission-found-3.wav",
+      "text": "Has encontrado 3 de 3.",
+      "spoken": "Has encontrado 3 de 3."
+    },
+    {
+      "id": "en-voice-test",
+      "lang": "en",
+      "file": "en-voice-test.wav",
+      "text": "Voice is on. When you move to a new region, I will say its name.",
+      "spoken": "Voice is on. When you move to a new region, I will say its name."
+    },
+    {
+      "id": "en-cell-intro",
+      "lang": "en",
+      "file": "en-cell-intro.wav",
+      "text": "Explore a simplified animal cell. Each organelle has its own tone, timbre and pattern. The beat of the nucleus is a teaching code, not a biological pulse.",
+      "spoken": "Explore a simplified animal cell. Each organelle has its own tone, timbre and pattern. The beat of the nucleus is a teaching code, not a biological pulse."
+    },
+    {
+      "id": "en-cell-membrane-label",
+      "lang": "en",
+      "file": "en-cell-membrane-label.wav",
+      "text": "Cell membrane",
+      "spoken": "Cell membrane"
+    },
+    {
+      "id": "en-cell-membrane-detail",
+      "lang": "en",
+      "file": "en-cell-membrane-detail.wav",
+      "text": "Cell membrane. It surrounds the cell and controls the exchange of substances with the outside.",
+      "spoken": "Cell membrane. It surrounds the cell and controls the exchange of substances with the outside."
+    },
+    {
+      "id": "en-cell-cytoplasm-label",
+      "lang": "en",
+      "file": "en-cell-cytoplasm-label.wav",
+      "text": "Cytoplasm",
+      "spoken": "Cytoplasm"
+    },
+    {
+      "id": "en-cell-cytoplasm-detail",
+      "lang": "en",
+      "file": "en-cell-cytoplasm-detail.wav",
+      "text": "Cytoplasm. The inner medium that holds the organelles, where many of the reactions of the cell take place.",
+      "spoken": "Cytoplasm. The inner medium that holds the organelles, where many of the reactions of the cell take place."
+    },
+    {
+      "id": "en-cell-nucleus-label",
+      "lang": "en",
+      "file": "en-cell-nucleus-label.wav",
+      "text": "Nucleus",
+      "spoken": "Nucleus"
+    },
+    {
+      "id": "en-cell-nucleus-detail",
+      "lang": "en",
+      "file": "en-cell-nucleus-detail.wav",
+      "text": "Nucleus. It holds most of the DNA and helps to regulate the activity of the cell.",
+      "spoken": "Nucleus. It holds most of the DNA and helps to regulate the activity of the cell."
+    },
+    {
+      "id": "en-cell-nucleolus-label",
+      "lang": "en",
+      "file": "en-cell-nucleolus-label.wav",
+      "text": "Nucleolus",
+      "spoken": "Nucleolus"
+    },
+    {
+      "id": "en-cell-nucleolus-detail",
+      "lang": "en",
+      "file": "en-cell-nucleolus-detail.wav",
+      "text": "Nucleolus. A region of the nucleus where ribosomal RNA is made and ribosome subunits are assembled.",
+      "spoken": "Nucleolus. A region of the nucleus where ribosomal RNA is made and ribosome subunits are assembled."
+    },
+    {
+      "id": "en-cell-mitochondria-label",
+      "lang": "en",
+      "file": "en-cell-mitochondria-label.wav",
+      "text": "Mitochondria",
+      "spoken": "Mitochondria"
+    },
+    {
+      "id": "en-cell-mitochondria-detail",
+      "lang": "en",
+      "file": "en-cell-mitochondria-detail.wav",
+      "text": "Mitochondria. They convert the energy in nutrients and produce much of the ATP in the cell.",
+      "spoken": "Mitochondria. They convert the energy in nutrients and produce much of the ATP in the cell."
+    },
+    {
+      "id": "en-cell-reticulum-label",
+      "lang": "en",
+      "file": "en-cell-reticulum-label.wav",
+      "text": "Endoplasmic reticulum",
+      "spoken": "Endoplasmic reticulum"
+    },
+    {
+      "id": "en-cell-reticulum-detail",
+      "lang": "en",
+      "file": "en-cell-reticulum-detail.wav",
+      "text": "Endoplasmic reticulum. A network of membranes that helps to make and transport proteins and lipids.",
+      "spoken": "Endoplasmic reticulum. A network of membranes that helps to make and transport proteins and lipids."
+    },
+    {
+      "id": "en-cell-golgi-label",
+      "lang": "en",
+      "file": "en-cell-golgi-label.wav",
+      "text": "Golgi apparatus",
+      "spoken": "Golgi apparatus"
+    },
+    {
+      "id": "en-cell-golgi-detail",
+      "lang": "en",
+      "file": "en-cell-golgi-detail.wav",
+      "text": "Golgi apparatus. It modifies, sorts and packages proteins and lipids for transport.",
+      "spoken": "Golgi apparatus. It modifies, sorts and packages proteins and lipids for transport."
+    },
+    {
+      "id": "en-cell-ribosomes-label",
+      "lang": "en",
+      "file": "en-cell-ribosomes-label.wav",
+      "text": "Ribosomes",
+      "spoken": "Ribosomes"
+    },
+    {
+      "id": "en-cell-ribosomes-detail",
+      "lang": "en",
+      "file": "en-cell-ribosomes-detail.wav",
+      "text": "Ribosomes. Small structures that make proteins. Some ribosomes are also attached to the reticulum.",
+      "spoken": "Ribosomes. Small structures that make proteins. Some ribosomes are also attached to the reticulum."
+    },
+    {
+      "id": "en-islands-intro",
+      "lang": "en",
+      "file": "en-islands-intro.wav",
+      "text": "Explore the eight Canary Islands in a teaching diagram. Each island has its own tone. In Tenerife, look for Mount Teide, marked with a triangle and a higher sound. This is not a map for navigation.",
+      "spoken": "Explore the eight Canary Islands in a teaching diagram. Each island has its own tone. In Tenerife, look for Mount Tay-day, marked with a triangle and a higher sound. This is not a map for navigation."
+    },
+    {
+      "id": "en-islands-palma-label",
+      "lang": "en",
+      "file": "en-islands-palma-label.wav",
+      "text": "La Palma",
+      "spoken": "La Palma"
+    },
+    {
+      "id": "en-islands-palma-detail",
+      "lang": "en",
+      "file": "en-islands-palma-detail.wav",
+      "text": "La Palma. An island in the west of the archipelago. In this diagram it lies north of El Hierro.",
+      "spoken": "La Palma. An island in the west of the archipelago. In this diagram it lies north of El Hierro."
+    },
+    {
+      "id": "en-islands-hierro-label",
+      "lang": "en",
+      "file": "en-islands-hierro-label.wav",
+      "text": "El Hierro",
+      "spoken": "El Hierro"
+    },
+    {
+      "id": "en-islands-hierro-detail",
+      "lang": "en",
+      "file": "en-islands-hierro-detail.wav",
+      "text": "El Hierro. The island furthest to the south-west in this diagram of the Canary Islands.",
+      "spoken": "El Hierro. The island furthest to the south-west in this diagram of the Canary Islands."
+    },
+    {
+      "id": "en-islands-gomera-label",
+      "lang": "en",
+      "file": "en-islands-gomera-label.wav",
+      "text": "La Gomera",
+      "spoken": "La Gomera"
+    },
+    {
+      "id": "en-islands-gomera-detail",
+      "lang": "en",
+      "file": "en-islands-gomera-detail.wav",
+      "text": "La Gomera. A roughly circular island, west of Tenerife.",
+      "spoken": "La Gomera. A roughly circular island, west of Tenerife."
+    },
+    {
+      "id": "en-islands-tenerife-label",
+      "lang": "en",
+      "file": "en-islands-tenerife-label.wav",
+      "text": "Tenerife",
+      "spoken": "Tenerife"
+    },
+    {
+      "id": "en-islands-tenerife-detail",
+      "lang": "en",
+      "file": "en-islands-tenerife-detail.wav",
+      "text": "Tenerife. A central-western island, home to Mount Teide. Look for the small glowing triangle inside it.",
+      "spoken": "Tenerife. A central-western island, home to Mount Tay-day. Look for the small glowing triangle inside it."
+    },
+    {
+      "id": "en-islands-grancanaria-label",
+      "lang": "en",
+      "file": "en-islands-grancanaria-label.wav",
+      "text": "Gran Canaria",
+      "spoken": "Gran Canaria"
+    },
+    {
+      "id": "en-islands-grancanaria-detail",
+      "lang": "en",
+      "file": "en-islands-grancanaria-detail.wav",
+      "text": "Gran Canaria. A roughly circular island, east of Tenerife and west of Fuerteventura.",
+      "spoken": "Gran Canaria. A roughly circular island, east of Tenerife and west of Fuerteventura."
+    },
+    {
+      "id": "en-islands-fuerteventura-label",
+      "lang": "en",
+      "file": "en-islands-fuerteventura-label.wav",
+      "text": "Fuerteventura",
+      "spoken": "Fuerteventura"
+    },
+    {
+      "id": "en-islands-fuerteventura-detail",
+      "lang": "en",
+      "file": "en-islands-fuerteventura-detail.wav",
+      "text": "Fuerteventura. A long island in the east of the archipelago, south of Lanzarote.",
+      "spoken": "Fuerteventura. A long island in the east of the archipelago, south of Lanzarote."
+    },
+    {
+      "id": "en-islands-lanzarote-label",
+      "lang": "en",
+      "file": "en-islands-lanzarote-label.wav",
+      "text": "Lanzarote",
+      "spoken": "Lanzarote"
+    },
+    {
+      "id": "en-islands-lanzarote-detail",
+      "lang": "en",
+      "file": "en-islands-lanzarote-detail.wav",
+      "text": "Lanzarote. An island in the north-east of the Canaries, north of Fuerteventura and south of La Graciosa.",
+      "spoken": "Lanzarote. An island in the north-east of the Canaries, north of Fuerteventura and south of La Graciosa."
+    },
+    {
+      "id": "en-islands-graciosa-label",
+      "lang": "en",
+      "file": "en-islands-graciosa-label.wav",
+      "text": "La Graciosa",
+      "spoken": "La Graciosa"
+    },
+    {
+      "id": "en-islands-graciosa-detail",
+      "lang": "en",
+      "file": "en-islands-graciosa-detail.wav",
+      "text": "La Graciosa. The smallest of the eight islands shown. It lies north of Lanzarote.",
+      "spoken": "La Graciosa. The smallest of the eight islands shown. It lies north of Lanzarote."
+    },
+    {
+      "id": "en-islands-teide-label",
+      "lang": "en",
+      "file": "en-islands-teide-label.wav",
+      "text": "Mount Teide",
+      "spoken": "Mount Tay-day"
+    },
+    {
+      "id": "en-islands-teide-detail",
+      "lang": "en",
+      "file": "en-islands-teide-detail.wav",
+      "text": "Mount Teide. The volcano of Tenerife and the highest point in Spain. It has the highest pitch here, to mark the landmark of the island.",
+      "spoken": "Mount Tay-day. The volcano of Tenerife and the highest point in Spain. It has the highest pitch here, to mark the landmark of the island."
+    },
+    {
+      "id": "en-economy-intro",
+      "lang": "en",
+      "file": "en-economy-intro.wav",
+      "text": "Follow the supply and demand curves. Height raises the pitch; timbre tells the curves apart. Where they cross, the quantity supplied equals the quantity demanded, at the same price. This is a simplified linear model.",
+      "spoken": "Follow the supply and demand curves. Height raises the pitch; timbre tells the curves apart. Where they cross, the quantity supplied equals the quantity demanded, at the same price. This is a simplified linear model."
+    },
+    {
+      "id": "en-economy-supply-label",
+      "lang": "en",
+      "file": "en-economy-supply-label.wav",
+      "text": "Supply",
+      "spoken": "Supply"
+    },
+    {
+      "id": "en-economy-supply-detail",
+      "lang": "en",
+      "file": "en-economy-supply-detail.wav",
+      "text": "Supply. The rising curve links a higher price with a larger quantity supplied. It has a bright, triangle-wave timbre.",
+      "spoken": "Supply. The rising curve links a higher price with a larger quantity supplied. It has a bright, triangle-wave timbre."
+    },
+    {
+      "id": "en-economy-demand-label",
+      "lang": "en",
+      "file": "en-economy-demand-label.wav",
+      "text": "Demand",
+      "spoken": "Demand"
+    },
+    {
+      "id": "en-economy-demand-detail",
+      "lang": "en",
+      "file": "en-economy-demand-detail.wav",
+      "text": "Demand. The falling curve links a higher price with a smaller quantity demanded. It has a soft timbre.",
+      "spoken": "Demand. The falling curve links a higher price with a smaller quantity demanded. It has a soft timbre."
+    },
+    {
+      "id": "en-economy-equilibrium-label",
+      "lang": "en",
+      "file": "en-economy-equilibrium-label.wav",
+      "text": "Equilibrium point",
+      "spoken": "Equilibrium point"
+    },
+    {
+      "id": "en-economy-equilibrium-detail",
+      "lang": "en",
+      "file": "en-economy-equilibrium-detail.wav",
+      "text": "Equilibrium point. The curves cross: at this price, the quantity supplied equals the quantity demanded. The guides mark P star and Q star.",
+      "spoken": "Equilibrium point. The curves cross: at this price, the quantity supplied equals the quantity demanded. The guides mark P star and Q star."
+    },
+    {
+      "id": "en-economy-price-label",
+      "lang": "en",
+      "file": "en-economy-price-label.wav",
+      "text": "Price axis",
+      "spoken": "Price axis"
+    },
+    {
+      "id": "en-economy-price-detail",
+      "lang": "en",
+      "file": "en-economy-price-detail.wav",
+      "text": "Price axis. The vertical axis. Price rises as you move up. P star marks the equilibrium price.",
+      "spoken": "Price axis. The vertical axis. Price rises as you move up. P star marks the equilibrium price."
+    },
+    {
+      "id": "en-economy-quantity-label",
+      "lang": "en",
+      "file": "en-economy-quantity-label.wav",
+      "text": "Quantity axis",
+      "spoken": "Quantity axis"
+    },
+    {
+      "id": "en-economy-quantity-detail",
+      "lang": "en",
+      "file": "en-economy-quantity-detail.wav",
+      "text": "Quantity axis. The horizontal axis. Quantity increases to the right. Q star marks the equilibrium quantity.",
+      "spoken": "Quantity axis. The horizontal axis. Quantity increases to the right. Q star marks the equilibrium quantity."
+    },
+    {
+      "id": "en-cell-mission-nucleus",
+      "lang": "en",
+      "file": "en-cell-mission-nucleus.wav",
+      "text": "Find the nucleus.",
+      "spoken": "Find the nucleus."
+    },
+    {
+      "id": "en-cell-mission-mitochondria",
+      "lang": "en",
+      "file": "en-cell-mission-mitochondria.wav",
+      "text": "Find an organelle that produces much of the cell's ATP.",
+      "spoken": "Find an organelle that produces much of the cell's ATP."
+    },
+    {
+      "id": "en-cell-mission-nucleolus",
+      "lang": "en",
+      "file": "en-cell-mission-nucleolus.wav",
+      "text": "Find the small region inside the nucleus.",
+      "spoken": "Find the small region inside the nucleus."
+    },
+    {
+      "id": "en-islands-mission-tenerife",
+      "lang": "en",
+      "file": "en-islands-mission-tenerife.wav",
+      "text": "Find Tenerife.",
+      "spoken": "Find Tenerife."
+    },
+    {
+      "id": "en-islands-mission-teide",
+      "lang": "en",
+      "file": "en-islands-mission-teide.wav",
+      "text": "Now find Mount Teide, inside Tenerife.",
+      "spoken": "Now find Mount Tay-day, inside Tenerife."
+    },
+    {
+      "id": "en-islands-mission-hierro",
+      "lang": "en",
+      "file": "en-islands-mission-hierro.wav",
+      "text": "Find the island furthest to the south-west.",
+      "spoken": "Find the island furthest to the south-west."
+    },
+    {
+      "id": "en-economy-mission-demand",
+      "lang": "en",
+      "file": "en-economy-mission-demand.wav",
+      "text": "Find the demand curve.",
+      "spoken": "Find the demand curve."
+    },
+    {
+      "id": "en-economy-mission-supply",
+      "lang": "en",
+      "file": "en-economy-mission-supply.wav",
+      "text": "Find the curve where the price rises as the quantity increases.",
+      "spoken": "Find the curve where the price rises as the quantity increases."
+    },
+    {
+      "id": "en-economy-mission-equilibrium",
+      "lang": "en",
+      "file": "en-economy-mission-equilibrium.wav",
+      "text": "Find the point where supply and demand meet.",
+      "spoken": "Find the point where supply and demand meet."
+    },
+    {
+      "id": "en-mission-intro",
+      "lang": "en",
+      "file": "en-mission-intro.wav",
+      "text": "Three challenges. Explore with your finger and double tap where you think the answer is. Ask for a hint if you need one.",
+      "spoken": "Three challenges. Explore with your finger and double tap where you think the answer is. Ask for a hint if you need one."
+    },
+    {
+      "id": "en-mission-correct",
+      "lang": "en",
+      "file": "en-mission-correct.wav",
+      "text": "Correct!",
+      "spoken": "Correct!"
+    },
+    {
+      "id": "en-mission-wrong",
+      "lang": "en",
+      "file": "en-mission-wrong.wav",
+      "text": "Not this one. Keep exploring.",
+      "spoken": "Not this one. Keep exploring."
+    },
+    {
+      "id": "en-mission-hint1",
+      "lang": "en",
+      "file": "en-mission-hint1.wav",
+      "text": "Hint: follow the sound. It speeds up as you get closer.",
+      "spoken": "Hint: follow the sound. It speeds up as you get closer."
+    },
+    {
+      "id": "en-mission-hint2",
+      "lang": "en",
+      "file": "en-mission-hint2.wav",
+      "text": "More help: I will tell you which way to move.",
+      "spoken": "More help: I will tell you which way to move."
+    },
+    {
+      "id": "en-mission-on-target",
+      "lang": "en",
+      "file": "en-mission-on-target.wav",
+      "text": "You are on it. Double tap to answer.",
+      "spoken": "You are on it. Double tap to answer."
+    },
+    {
+      "id": "en-mission-done",
+      "lang": "en",
+      "file": "en-mission-done.wav",
+      "text": "Missions complete.",
+      "spoken": "Missions complete."
+    },
+    {
+      "id": "en-mission-dir-close",
+      "lang": "en",
+      "file": "en-mission-dir-close.wav",
+      "text": "Very close.",
+      "spoken": "Very close."
+    },
+    {
+      "id": "en-mission-dir-up",
+      "lang": "en",
+      "file": "en-mission-dir-up.wav",
+      "text": "Up.",
+      "spoken": "Up."
+    },
+    {
+      "id": "en-mission-dir-down",
+      "lang": "en",
+      "file": "en-mission-dir-down.wav",
+      "text": "Down.",
+      "spoken": "Down."
+    },
+    {
+      "id": "en-mission-dir-left",
+      "lang": "en",
+      "file": "en-mission-dir-left.wav",
+      "text": "Left.",
+      "spoken": "Left."
+    },
+    {
+      "id": "en-mission-dir-right",
+      "lang": "en",
+      "file": "en-mission-dir-right.wav",
+      "text": "Right.",
+      "spoken": "Right."
+    },
+    {
+      "id": "en-mission-dir-up-left",
+      "lang": "en",
+      "file": "en-mission-dir-up-left.wav",
+      "text": "Up and to the left.",
+      "spoken": "Up and to the left."
+    },
+    {
+      "id": "en-mission-dir-up-right",
+      "lang": "en",
+      "file": "en-mission-dir-up-right.wav",
+      "text": "Up and to the right.",
+      "spoken": "Up and to the right."
+    },
+    {
+      "id": "en-mission-dir-down-left",
+      "lang": "en",
+      "file": "en-mission-dir-down-left.wav",
+      "text": "Down and to the left.",
+      "spoken": "Down and to the left."
+    },
+    {
+      "id": "en-mission-dir-down-right",
+      "lang": "en",
+      "file": "en-mission-dir-down-right.wav",
+      "text": "Down and to the right.",
+      "spoken": "Down and to the right."
+    },
+    {
+      "id": "en-mission-found-0",
+      "lang": "en",
+      "file": "en-mission-found-0.wav",
+      "text": "You found 0 of 3.",
+      "spoken": "You found 0 of 3."
+    },
+    {
+      "id": "en-mission-found-1",
+      "lang": "en",
+      "file": "en-mission-found-1.wav",
+      "text": "You found 1 of 3.",
+      "spoken": "You found 1 of 3."
+    },
+    {
+      "id": "en-mission-found-2",
+      "lang": "en",
+      "file": "en-mission-found-2.wav",
+      "text": "You found 2 of 3.",
+      "spoken": "You found 2 of 3."
+    },
+    {
+      "id": "en-mission-found-3",
+      "lang": "en",
+      "file": "en-mission-found-3.wav",
+      "text": "You found 3 of 3.",
+      "spoken": "You found 3 of 3."
+    }
+  ]
+}

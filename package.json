@@ -1,0 +1,14 @@
+{
+  "name": "tacto",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Diagrams you can touch and hear: blind and low-vision students explore educational diagrams on their own phone, with sound, voice and vibration.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "license": "EUPL-1.2",
+  "author": "Enrique Fernández García"
+}

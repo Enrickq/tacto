@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1212">
+  <meta name="description" content="Explora la forma del conocimiento con el dedo, el oído y la voz. Tres experiencias educativas en el laboratorio TACTO.">
+  <title>TACTO — El conocimiento también se siente</title>
+  <!-- Text is written in Spanish and translated by app.js from i18n.js (data-i18n*). -->
+  <script src="./lang-boot.js"></script>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./studio.css">
+  <link rel="stylesheet" href="./feedback-controls.css">
+</head>
+<body>
+  <a class="skip-link" href="#surface" data-i18n="nav.skip">Ir a la experiencia</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="TACTO, inicio" data-i18n-attr="aria-label:nav.home">
+      <svg class="brand-symbol" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 22V18M15 29V11M22 33V7M29 27V13M36 22V18"/></svg>
+      <span>tacto<span class="brand-dot">.</span></span>
+    </a>
+    <div class="header-label"><span class="small-dot"></span> <span data-i18n="header.lab">Laboratorio sensorial</span> <span class="version" data-i18n="header.version">PILOTO 02</span></div>
+    <div class="header-actions">
+      <div class="language-switch" role="group" aria-label="Idioma · Language">
+        <button type="button" data-language="es" lang="es" aria-label="Español" aria-pressed="true">ES</button>
+        <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+      </div>
+      <button class="studio-open-button" id="open-studio"><span data-i18n="header.create">Crear experiencia</span> <span aria-hidden="true">＋</span></button>
+      <button class="text-button" id="help-button" aria-label="Cómo explorar" data-i18n-attr="aria-label:header.help"><span class="desktop-label" data-i18n="header.help">Cómo explorar</span><span class="icon" data-icon="help"></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow" data-i18n="intro.eyebrow">OTRA FORMA DE ACCEDER AL CONOCIMIENTO</p><h1 id="page-title" data-i18n-html="intro.title">Lo invisible también <em>se explora.</em></h1></div>
+      <p class="intro-copy" data-i18n-html="intro.copy">Un dedo. Un sonido. Un descubrimiento.<br> Recorre imágenes educativas y encuentra<br class="desktop-label"> una nueva forma de comprenderlas.</p>
+    </section>
+
+    <section class="laboratory" aria-label="Laboratorio interactivo" data-i18n-attr="aria-label:lab.label">
+      <aside class="sidebar" aria-label="Experiencias disponibles" data-i18n-attr="aria-label:sidebar.label">
+        <div class="section-label"><span data-i18n="sidebar.choose">ELIGE UNA EXPERIENCIA</span><span id="nav-total">01—03</span></div>
+        <nav id="scene-nav" aria-label="Escenarios" data-i18n-attr="aria-label:sidebar.nav"></nav>
+        <button class="sidebar-create" id="sidebar-studio"><span aria-hidden="true">＋</span><span><span data-i18n="sidebar.create">Tu imagen también se explora</span><small data-i18n="sidebar.createHint">Abrir TACTO Studio</small></span><span aria-hidden="true">↗</span></button>
+        <div class="sidebar-bottom">
+          <div class="headphone-mark" aria-hidden="true" data-icon="headphones"></div>
+          <p data-i18n-html="sidebar.headphones">Mejor con auriculares.<br><span>Escucha también la posición.</span></p>
+          <div class="sidebar-rule"></div>
+          <div class="progress-header"><span data-i18n="progress.title">Tu exploración</span><span id="discovery-count">0 / 0</span></div>
+          <div class="progress-track" role="progressbar" aria-label="Regiones exploradas" data-i18n-attr="aria-label:progress.aria" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><span id="progress-fill"></span></div>
+          <p class="progress-caption" id="progress-caption" data-i18n="progress.start">Cada zona tiene algo que contar.</p>
+        </div>
+      </aside>
+
+      <div class="experience">
+        <div class="experience-heading">
+          <div><p class="eyebrow" id="scene-category">BIOLOGÍA</p><h2 id="scene-title">La vida por dentro</h2></div>
+          <div class="view-actions">
+            <button class="icon-button" id="hide-image" aria-label="Ocultar imagen" aria-pressed="false" title="Explorar con la imagen oculta" data-i18n-attr="aria-label:view.hide;title:view.hideTitle"><span data-icon="eye"></span></button>
+            <button class="icon-button" id="fullscreen" aria-label="Ampliar experiencia" title="Ampliar experiencia" data-i18n-attr="aria-label:view.expand;title:view.expand"><span data-icon="expand"></span></button>
+          </div>
+        </div>
+        <div class="surface-wrap">
+          <div class="surface-top"><span class="surface-badge"><span class="small-dot"></span><span id="surface-state" data-i18n="surface.ready">LISTO PARA EXPLORAR</span></span><span id="scene-counter">01 / 03</span></div>
+          <div id="surface" class="surface" tabindex="0" role="group" aria-label="Área de exploración" data-i18n-attr="aria-label:surface.aria" aria-describedby="surface-instructions">
+            <svg id="scene-svg" viewBox="0 0 1000 640" aria-hidden="true" preserveAspectRatio="xMidYMid meet"></svg>
+            <div class="hidden-image-message" aria-hidden="true"><span data-icon="ear"></span><p data-i18n="surface.hiddenTitle">Deja que el sonido te guíe.</p><span data-i18n="surface.hiddenNote">La imagen está oculta</span></div>
+            <div class="exploration-cursor" id="cursor" hidden><span></span></div>
+            <div class="start-hint" id="start-hint" aria-hidden="true"><span data-icon="fingerprint"></span><span data-i18n="surface.hint">Desliza para descubrir</span><span class="hint-arrow">↗</span></div>
+          </div>
+          <div class="surface-bottom"><span><span class="tiny-cross">+</span> <span id="surface-caption" data-i18n="surface.caption">MODELO EDUCATIVO INTERACTIVO</span></span><span class="coordinates" id="coordinates">X — · Y —</span></div>
+        </div>
+        <p id="surface-instructions" class="sr-only" data-i18n="surface.instructions">Activa la experiencia. Explora con el dedo o mantén pulsado el ratón. Con teclado, usa las flechas, Mayús para avanzar más y Enter para leer la región. Escape detiene el sonido. También puedes usar los botones de regiones.</p>
+
+        <p class="sensory-guide" id="signal-guide"></p>
+        <div class="readout" id="readout">
+          <span class="readout-mark" id="readout-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+          <div class="readout-text"><span class="readout-label" data-i18n="readout.label">ESTÁS EXPLORANDO</span><h3 id="region-name" data-i18n="readout.startTitle">Todo empieza con un gesto</h3><p id="region-description" data-i18n="readout.startText">Activa el sonido y recorre la imagen.</p></div>
+          <button class="icon-button" id="read-region" aria-label="Escuchar descripción de la región" title="Escuchar descripción" data-i18n-attr="aria-label:readout.listen;title:readout.listenTitle"><span data-icon="speaker"></span></button>
+        </div>
+        <div class="transport">
+          <button class="primary-button" id="start-button"><span data-icon="play"></span><span id="start-label" data-i18n="transport.start">Activar experiencia</span></button>
+          <button class="secondary-button" id="tour-button" aria-pressed="false"><span data-icon="route"></span><span data-i18n="transport.tour">Recorrido guiado</span></button>
+          <div class="transport-spacer"></div>
+          <button class="icon-button" id="sound-button" aria-label="Silenciar sonido" aria-pressed="true" title="Sonido" data-i18n-attr="title:transport.sound"><span data-icon="volume"></span></button>
+          <label class="volume-control"><span class="sr-only" data-i18n="transport.volume">Volumen</span><input id="volume" type="range" min="0" max="60" value="25" aria-label="Volumen" data-i18n-attr="aria-label:transport.volume"><span class="sr-only" id="volume-value">25%</span></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-details" aria-label="Controles y regiones" data-i18n-attr="aria-label:details.label">
+      <div class="detail-card mission" id="mission-card">
+        <div class="section-label"><span id="mission-label" data-i18n="mission.title">TU PRIMER DESCUBRIMIENTO</span><span class="mission-step" id="mission-step"></span></div>
+        <p id="scene-task"></p>
+        <p class="mission-help" id="mission-help" hidden></p>
+        <ol class="mission-results" id="mission-results" hidden></ol>
+        <div class="mission-actions" id="mission-live" hidden>
+          <button class="primary-button" id="mission-answer"><span data-i18n="mission.answer">Responder aquí</span></button>
+          <button class="secondary-button" id="mission-hint"><span id="mission-hint-label" data-i18n="mission.hint">Pista</span></button>
+          <button class="text-button" id="mission-repeat"><span data-i18n="mission.repeat">Repetir pregunta</span></button>
+          <button class="text-button" id="mission-skip"><span data-i18n="mission.skip">Saltar</span></button>
+          <button class="text-button" id="mission-stop"><span data-i18n="mission.stop">Terminar</span></button>
+        </div>
+        <div class="mission-actions" id="mission-idle">
+          <button class="secondary-button" id="mission-start"><span data-icon="spark"></span><span id="mission-start-label" data-i18n="mission.start">Empezar misiones</span></button>
+          <button class="text-button" id="reset-session"><span data-i18n="mission.reset">Reiniciar exploración</span> <span aria-hidden="true">↺</span></button>
+        </div>
+        <p class="mission-privacy" id="mission-privacy" data-i18n="mission.privacy" hidden>Los resultados se guardan solo en este dispositivo, sin nombres ni datos personales.</p>
+      </div>
+      <div class="detail-card region-card"><div class="section-label"><span data-i18n="regions.title">EXPLORA POR REGIONES</span><span id="region-total"></span></div><div id="region-list" class="region-list"></div></div>
+      <div class="detail-card settings-card"><div class="section-label"><span data-i18n="settings.title">A TU MANERA</span><span data-icon="sliders"></span></div>
+        <label class="switch-row"><span><strong data-i18n="settings.haptics">Respuesta háptica</strong><small id="haptics-status" data-i18n="settings.checking">Comprobando compatibilidad</small></span><input id="haptics-toggle" type="checkbox" role="switch"><span class="switch-track" aria-hidden="true"></span></label>
+        <label class="switch-row"><span><strong data-i18n="settings.voice">Decir el nombre de cada zona</strong><small data-i18n="settings.voiceHint">Al entrar: «Núcleo», «Mitocondrias»…</small></span><input id="voice-toggle" type="checkbox" role="switch"><span class="switch-track" aria-hidden="true"></span></label>
+        <div class="feedback-tests"><button class="text-button" id="test-voice"><span data-i18n="settings.testVoice">Probar voz</span> <span aria-hidden="true">↗</span></button><button class="text-button" id="test-haptics"><span data-i18n="settings.testHaptics">Probar vibración</span> <span aria-hidden="true">↗</span></button></div>
+        <p class="voice-status" id="voice-status" role="status" data-i18n="speech.idle">Pulsa Probar voz para escuchar una frase.</p>
+        <div class="haptics-confirm" id="haptics-confirm" hidden><p data-i18n="settings.feltQuestion">¿Has sentido dos pulsos?</p><button id="haptics-yes" data-i18n="settings.yes">Sí</button><button id="haptics-no" data-i18n="settings.no">No</button></div>
+      </div>
+    </section>
+    <p class="session-note"><span data-i18n="session.note">Explora los ejemplos o crea tu propia experiencia en Studio. Tu contenido permanece en este dispositivo.</span> <button id="export-session" data-i18n="session.export">Descargar recorrido</button></p>
+  </main>
+  <footer><span class="footer-brand">TACTO <span data-i18n="footer.tagline">El conocimiento también se siente.</span></span><span><span data-i18n="footer.status">IDEA EN EXPLORACIÓN</span> <span class="small-dot"></span> ERUA 2026</span></footer>
+  <div class="sr-only" id="announcements" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <button class="dialog-close icon-button" id="close-help" aria-label="Cerrar ayuda" data-i18n-attr="aria-label:help.close"><span data-icon="close"></span></button>
+    <p class="eyebrow" data-i18n="help.eyebrow">BIENVENIDO AL LABORATORIO</p><h2 id="help-title" data-i18n-html="help.title">Aprende a escuchar<br>la forma de las cosas.</h2>
+    <ol class="help-steps">
+      <li><span>01</span><div><h3 data-i18n="help.step1Title">Activa y escucha</h3><p data-i18n="help.step1Text">Usa auriculares, comienza con volumen bajo y pulsa «Activar experiencia».</p></div></li>
+      <li><span>02</span><div><h3 data-i18n="help.step2Title">Recorre a tu ritmo</h3><p data-i18n="help.step2Text">Desliza el dedo o mantén pulsado el ratón. El sonido responde a la zona y a tu posición. Usa las flechas o los botones de regiones como alternativa.</p></div></li>
+      <li><span>03</span><div><h3 data-i18n="help.step3Title">Descubre las diferencias</h3><p data-i18n="help.step3Text">Escucha una descripción, activa la voz o sigue el recorrido guiado. Puedes ocultar la imagen.</p></div></li>
+    </ol>
+    <div class="help-note"><strong data-i18n="help.noteTitle">Voz, sonido y vibración</strong><p data-i18n="help.noteText">Los tonos distinguen regiones; su intensidad no representa una cantidad biológica. «Decir el nombre de cada zona» pronuncia su nombre al entrar. El altavoz de la región lee la explicación completa. Los ejemplos incluyen narración; el texto propio usa las voces disponibles del navegador. «Probar vibración» permite comprobar si el móvil responde: la pantalla sigue siendo plana.</p></div>
+    <button class="primary-button" id="begin-help"><span data-i18n="help.begin">Empezar a explorar</span> <span aria-hidden="true">↗</span></button>
+  </dialog>
+  <noscript><p lang="es">TACTO necesita JavaScript para la exploración interactiva. Los ejemplos del piloto son una célula animal, Canarias y oferta y demanda.</p><p lang="en">TACTO needs JavaScript for interactive exploration. The pilot examples are an animal cell, the Canary Islands, and supply and demand.</p></noscript>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

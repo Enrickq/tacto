@@ -1,0 +1,7 @@
+node_modules/
+artifacts/
+android-app/build/
+# Recorded narrations: generate them with scripts/prepare-narration.mjs (Windows).
+dist/audio/
+*.log
+.DS_Store
